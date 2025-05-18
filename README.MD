@@ -17,6 +17,6 @@ This assignment involves writing a set of shell scripts to process and analyze a
 ## Usage
 
 ```bash
-./empty_cells.sh bgg_dataset.txt ";"
-./preprocess.sh bgg_dataset.txt > cleaned_data.tsv
+./empty_cells.sh bgg_dataset.csv ";"
+./preprocess.sh bgg_dataset.csv > cleaned_data.tsv
 ./analysis.sh cleaned_data.tsv 
