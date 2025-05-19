@@ -29,7 +29,7 @@ tempfile4=$(mktemp)
 LC_CTYPE=C tr -cd '\000-\177' < "$tempfile3" > "$tempfile4"
 
 # Step 5: Extract the maximum ID from the original file (skip header)
-max_id=$(tail -n +2 "$filename" | cut -d ";" -f 1 | sort -k 1 -n -r | head -1)
+max_id=$(tail -n +2 "$filename" | cut -d ";" -f 1 | grep -E '^[0-9]+$' | sort -k 1 -n -r | head -1)
 
 # Step 6: Fill in missing IDs in first column, output CSV format
 awk -F $'\t' -v max_id="$max_id" 'BEGIN { OFS="\t" }
